@@ -1,7 +1,7 @@
-module.exports = {
+// keys.js - Deciding on  which set of credentials to return
 
-  session_secret: "80c6P183aRN9YyEaZXB9DLc2TnTq7PpDmkI35rA3",
-  cookie_secret: "JcvcEvCRUZMoEvPRO1xRpMmTCc0D2c",
-  MONGO_URI: 'mongodb://localhost/pollit'
-
-};
+if(process.env.NODE_ENV === 'production'){
+  module.exports = require('./prod');
+} else {
+  module.exports = require('./dev');
+}

@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-require('./config/db');
+//require('./config/db');
 
 
 //Include static files
@@ -23,7 +23,10 @@ var auth = require('./routes/auth')(app);
 
 //Handling 404
 app.use(function (req, res, next){
-  res.render('pages/404');
+  res.json({
+    status: "404",
+    message: "Not Found"
+  });
 });
 
 app.listen(PORT, () =>
