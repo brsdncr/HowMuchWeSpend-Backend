@@ -1,4 +1,4 @@
-var userController = require('../controllers/listController');
+var listController = require('../controllers/listController');
 
 module.exports = function(app) {
 

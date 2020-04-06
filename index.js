@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
-
+//const cors = require('cors');
 const PORT = process.env.PORT || 4000;
 
 const keys = require('./config/keys');
-
-const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -19,6 +17,7 @@ app.use(express.static(__dirname + '/public'));
 
 //routes
 var auth = require('./routes/auth')(app);
+var list = require('./routes/list')(app);
 
 
 //Handling 404
