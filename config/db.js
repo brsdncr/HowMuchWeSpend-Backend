@@ -3,7 +3,7 @@ mongoose.Promise = global.Promise;
 
 const keys = require('./keys');
 
-mongoose.connect(keys.MONGO_URI,{
+mongoose.connect(keys.,{
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true
