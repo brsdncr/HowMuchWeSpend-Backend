@@ -1,7 +1,8 @@
-var listController = require('../controllers/listController');
+const listController = require('../controllers/listController');
+const { authenticateToken } = require('../authentication/methods/methods');
 
 module.exports = function(app) {
 
-  app.get('/list', listController.getList);
+  app.post('/list', authenticateToken, listController.getList);
 
 };

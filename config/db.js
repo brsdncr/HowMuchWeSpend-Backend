@@ -5,7 +5,8 @@ const keys = require('./keys');
 
 mongoose.connect(keys.MONGO_URI,{
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true
 });
 mongoose.connection
   .once('open', function(){
